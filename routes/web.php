@@ -25,6 +25,14 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/inicio', function () {
+    return Inertia::render('Index');
+})->name('index');
+
+Route::get('/game', function () {
+    return Inertia::render('Game');
+})->name('game');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
